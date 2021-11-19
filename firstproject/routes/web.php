@@ -28,12 +28,6 @@ Route::get('/products/{name}/{id}', [ProductsController::class, 'show']) -> wher
 ]);
 
 // Route::get('/products/{name}', [ProductsController::class, 'show']);
-//product = all product
-
-//product/productName
-
-//product/productId
-
 
 // Route::get('/products/about', [ProductsController::class, 'about']);
 
