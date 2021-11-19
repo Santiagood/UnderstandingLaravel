@@ -14,15 +14,6 @@ class ProductsController extends Controller
             'product two' => 'Samsung'
         ];
 
-
-        //using the compact method
-        // return view('products.index', compact('title', 'description'));
-
-        //with method
-        // return view('products.index') -> with('title', $title);
-        //with method + loop
-        //return view('products.index') -> with('data', $data);
-
         //directly in the view
         return view('products.index', [
             'data' => $data
@@ -31,5 +22,16 @@ class ProductsController extends Controller
 
     public function about() {
         return 'About Us Page';
+    }
+
+    public function show($name) {
+        $data = [
+            'iPhone' => 'iPhone',
+            'Samsung' => 'Samsung'
+        ];
+
+        return view('products.index', [
+           'products' => $data[$name] ?? 'Product ' . $name . ' does not exist'
+        ]);
     }
 }

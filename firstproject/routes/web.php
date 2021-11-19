@@ -14,7 +14,28 @@ use App\Http\Controllers\ProductsController;
 */
 //Laravel 8 (new)
 Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/products/about', [ProductsController::class, 'about']);
+
+//patter is integer
+//Route::get('/products/{id}', [ProductsController::class, 'show'])->where('id', '[0-9]+');
+
+//pattern is string
+Route::get('/products/{name}', [ProductsController::class, 'show']) -> where('name', '[a-zA-Z]+');
+
+//double slash
+Route::get('/products/{name}/{id}', [ProductsController::class, 'show']) -> where([
+    'name' => '[a-z]',
+    'id' => '[0-9]'
+]);
+
+// Route::get('/products/{name}', [ProductsController::class, 'show']);
+//product = all product
+
+//product/productName
+
+//product/productId
+
+
+// Route::get('/products/about', [ProductsController::class, 'about']);
 
 // //Laravel 8 (also new)
 // Route::get('/products', 'App\Http\Controllers\ProductsController@index');
