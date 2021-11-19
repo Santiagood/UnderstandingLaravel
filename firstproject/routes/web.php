@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,31 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Laravel 8 (new)
+Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/products/about', [ProductsController::class, 'about']);
 
-//route that sends back a view
-Route::get('/', function () {
-    return view('welcome');
-});
+//Laravel 8 (also new)
+Route::get('/products', 'App\Http\Controllers\ProductsController@index');
 
-//Route to users - String
-Route::get('/users', function (){
-    return 'Welcome to the users page';
-});
-
-//route to users - Array(JSON)
-Route::get('/users', function() {
-    return ['php', 'html', 'laravel'];
-});
-
-//route to user - JSON
-Route::get('/users', function() {
-    return response()->json([
-        'name' => 'Rainier',
-        'course' => 'BSIT'
-    ]);
-});
-
-//route to user - function
-Route::get('/users', function() {
-    return redirect('/');
-});
+// //Before Laravel 8 (not working anymore)
+// Route::get('/products', 'ProductsController@index');
