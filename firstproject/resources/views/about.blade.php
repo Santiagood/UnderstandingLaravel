@@ -24,11 +24,11 @@
     </h2>
 @endfor --}}
 
-{{-- @foreach ($names as $name)
+@foreach ($names as $name)
     <h2>
         name is {{$name}}
     </h2>
-@endforeach --}}
+@endforeach
 
 {{-- @forelse ($names as $name)
     <h2>
@@ -40,9 +40,9 @@
     </h2>
 @endforelse --}}
 
-{{ $i = 0 }}
+{{-- {{ $i = 0 }}
 @while ($i < 10)
     <h2>{{$i}}</h2>
     {{$i++}}
-@endwhile
+@endwhile --}}
 
