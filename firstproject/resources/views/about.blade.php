@@ -40,8 +40,9 @@
     </h2>
 @endforelse --}}
 
-{{-- {{ $i = 0 }}
+{{ $i = 0 }}
 @while ($i < 10)
     <h2>{{$i}}</h2>
     {{$i++}}
-@endwhile --}}
+@endwhile
+

@@ -6,11 +6,6 @@
     <title>
         Personal Website - Code With Dary
     </title>
-    <style>
-        .active {
-            color: red;
-        }
-    </style>
     <link
         rel="stylesheet"
         href="style.css"
@@ -23,6 +18,7 @@
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
