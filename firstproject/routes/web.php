@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PagesController;
+use Illuminate\Routing\Route as RoutingRoute;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +14,7 @@ use App\Http\Controllers\ProductsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Laravel 8 (new)
-Route::get('/products',
-    [ProductsController::class, 'index'])->name('products');
-
-
+Route::get('/', [PagesController::class, 'index']);
+Route::get('/about', [PagesController::class, 'about']);
